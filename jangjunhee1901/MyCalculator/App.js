@@ -1,114 +1,175 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, {Component} from 'react';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import CustomButton from './CustomButton';
 
-import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <View style={styles.container_vertical}>
+        <View style={styles.output}> 
+		<Text style={styles.result}>0</Text>
+		</View>
+        <View style={styles.container_horizontal}>
+		  <CustomButton
+            buttonColor={'green'}
+            title={'7'}
+			titleColor={'white'}
+            onPress={() => alert('7')}/>
+          <CustomButton />
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+		   <CustomButton
+            buttonColor={'green'}
+            title={'8'}
+			titleColor={'white'}
+            onPress={() => alert('8')}/>
+          <CustomButton />
 
-const App = () => {
-  return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
-  );
-};
+		   <CustomButton
+            buttonColor={'green'}
+            title={'9'}
+			titleColor={'white'}
+            onPress={() => alert('9')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'+'}
+			titleColor={'white'}
+            onPress={() => alert('+')}/>
+          <CustomButton />
+        </View>
+		
+		<View style={styles.gap}/>
+
+		   <View style={styles.container_horizontal}>
+		  <CustomButton
+            buttonColor={'green'}
+            title={'4'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'5'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'6'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'-'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+        </View> 
+
+			<View style={styles.gap}/>
+
+
+		   <View style={styles.container_horizontal}>
+		  <CustomButton
+            buttonColor={'green'}
+            title={'1'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'2'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'3'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'x'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+        </View> 
+
+			<View style={styles.gap}/>
+
+		   <View style={styles.container_horizontal}>
+		  <CustomButton
+            buttonColor={'green'}
+            title={'C'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'0'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'='}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+
+		   <CustomButton
+            buttonColor={'green'}
+            title={'/'}
+			titleColor={'white'}
+            onPress={() => alert('1')}/>
+          <CustomButton />
+        </View> 
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container_vertical: {
+    flex: 1,
+    backgroundColor: 'gray',
+	padding: 50,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  output: {
+	flex: 1,
+    width:'100%',
+    backgroundColor: 'white',
+	alignItems: 'flex-end',
+	justifyContent: 'flex-end',
   },
-  body: {
-    backgroundColor: Colors.white,
+  container_horizontal: {
+    width:'100%',
+    height:100,
+    backgroundColor: 'white',
+	flexDirection: 'row',
+	justifyContent: 'space-around',
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+
+  gap: {
+    width:'100%',
+    height:1,
+    backgroundColor: 'white',
+	flexDirection: 'row',
+	justifyContent: 'space-around',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+
+  result: {
+    fontSize: 25,
   },
 });
-
-export default App;
