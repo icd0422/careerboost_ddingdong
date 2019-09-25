@@ -27,16 +27,16 @@ export default class App extends Component<Props> {
 		}else{
 			if(num === -1){//더하기 일 때
 				this.setState({temp:this.state.temp + this.state.result});
-				this.setState({result:'+'});
+				//this.setState({result:'+'});
 			}else if(num === -2){//빼기 일 때
 				this.setState({temp:this.state.temp - this.state.result});
-				this.setState({result:'-'});
+				//this.setState({result:'-'});
 			}else if(num === -3){//곱하기 일 때
 				this.setState({temp:this.state.temp * this.state.result});
-				this.setState({result:'*'});
+				//this.setState({result:'*'});
 			}else if(num === -4){//나누기 일 때
 				this.setState({temp:this.state.temp / this.state.result});
-				this.setState({result:'/'});
+				//this.setState({result:'/'});
 			}else if(num === -5){// = 일 때
 				if(this.state.temp2 === -1){//전에 +였다면
 					this.setState({result:this.state.result + this.state.temp});
@@ -56,6 +56,16 @@ export default class App extends Component<Props> {
 				this.setState({temp2:0});
 			}
 		}
+
+		if(num === -1){//더하기 일 때
+				this.setState({result:'+'});
+			}else if(num === -2){//빼기 일 때
+				this.setState({result:'-'});
+			}else if(num === -3){//곱하기 일 때
+				this.setState({result:'*'});
+			}else if(num === -4){//나누기 일 때
+				this.setState({result:'/'});
+			}
 	}
 	else//숫자가 눌렸다면
 	{
@@ -79,6 +89,7 @@ export default class App extends Component<Props> {
 		<Text style={styles.result}>{this.state.result.toString()}</Text>
 		</View>
 
+		
 	
         <View style={styles.container_horizontal}>
 		  <CustomButton
