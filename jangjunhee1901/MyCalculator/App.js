@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import CustomButton from './CustomButton';
-
+//
 export default class App extends Component<Props> {
   constructor(props){
     super(props);
